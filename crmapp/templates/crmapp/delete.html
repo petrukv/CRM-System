@@ -1,0 +1,10 @@
+<p>Are you sure you want to delete "{{ item }}"?</p>
+
+<a href="{% url 'home' %}" style="text-decoration: none; margin-right: 10px;">
+    <button type="button" style="padding: 5px 10px; background-color: #ddd; border: none; cursor: pointer;">Cancel</button>
+</a>
+
+<form method="POST" action="">
+    {% csrf_token %}
+    <input type="submit" name="Confirm" style="padding: 5px 10px; background-color: #4CAF50; color: white; border: none; cursor: pointer; margin-top:10px;">
+</form>

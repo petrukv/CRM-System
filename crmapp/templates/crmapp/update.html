@@ -1,0 +1,31 @@
+
+{% extends 'crmapp/base.html' %}
+{% block content %}
+<div class="col-md-6 offset-md-3">
+<h1>Add Record</h1>
+<br/>
+
+<form method="POST">
+	{% csrf_token %}
+
+	{{ form.as_p }}
+
+<br/>
+  <button type="submit" class="btn btn-secondary">Update Record</button>
+  <a href="{% url 'delete' pk=item.id %}" style="text-decoration: none;">
+    <button type="button" style="padding: 5px 10px; background-color: #FF0000; color: white; border: none; cursor: pointer; border-radius: 5px;">
+        Delete
+    </button>
+</a>
+
+<a href="{% url 'home' %}" style="text-decoration: none;">
+    <button type="button" style="padding: 5px 10px; background-color: rgb(92, 92, 92); border: none; cursor: pointer; border-radius: 5px; color: #FFFFFF;">
+        Home
+    </button>
+</a>
+</form>
+
+
+</div>
+
+{% endblock %}
